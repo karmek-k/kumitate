@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/karmek-k/kumitate/issues"
   },
-  "homepage": "https://github.com/karmek-k/kumitate#readme"
+  "homepage": "https://github.com/karmek-k/kumitate#readme",
+  "dependencies": {
+    "bancho.js": "^0.9.7",
+    "dotenv": "^10.0.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.4.1"
+  }
 }
