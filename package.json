@@ -21,6 +21,8 @@
     "dotenv": "^10.0.0"
   },
   "devDependencies": {
-    "prettier": "^2.4.1"
+    "@types/node": "^16.11.7",
+    "prettier": "^2.4.1",
+    "typescript": "^4.4.4"
   }
 }
