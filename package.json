@@ -2,8 +2,11 @@
   "name": "kumitate",
   "version": "0.0.0",
   "description": "A simple Bancho bot that dumps #modreqs messages to a file",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "start": "node .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
