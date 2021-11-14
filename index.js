@@ -3,6 +3,17 @@ require('dotenv').config();
 const fs = require('fs');
 const { BanchoClient } = require('bancho.js');
 
+function extractMapId(text) {
+  const regex = /https?:\/\/osu\.ppy\.sh\/beatmapsets\/(\d+)/;
+  const result = regex.exec(text);
+
+  if (!result) {
+    return null;
+  }
+
+  return result[1];
+}
+
 async function main() {
   const client = new BanchoClient({
     username: process.env.BANCHO_USERNAME,
@@ -16,7 +27,12 @@ async function main() {
   console.log(`[+] Connected to channel ${channel.name}`);
 
   channel.on('message', msg => {
-    fs.writeFileSync(process.env.OUT_FILENAME, msg.content + '\n', {
+    const mapId = extractMapId(msg.content);
+    if (!mapId) {
+      return;
+    }
+
+    fs.writeFileSync(process.env.OUT_FILENAME, mapId + '\n', {
       flag: 'a'
     });
   });
