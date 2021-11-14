@@ -2,8 +2,11 @@
   "name": "kumitate",
   "version": "0.0.0",
   "description": "A simple Bancho bot that dumps #modreqs messages to a file",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "start": "node .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,6 +24,8 @@
     "dotenv": "^10.0.0"
   },
   "devDependencies": {
-    "prettier": "^2.4.1"
+    "@types/node": "^16.11.7",
+    "prettier": "^2.4.1",
+    "typescript": "^4.4.4"
   }
 }
